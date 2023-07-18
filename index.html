@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0",
+        user-scalable="1">
+        <title>carreentals.com</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+        <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+    </head>
+
+<style>
+    :root{
+        --yellow:#f9d606;
+        --light-yellow:#ffee80;
+        --black:#130f40;
+        --light-color:#666;
+        --border: .1rem solid rgba(0,0,0,.1);
+        --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    }   
+    *{
+        font-family: sans-serif;
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        outline: none; border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
+
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 7rem;
+        scroll-behavior: smooth;
+    }
+    
+    section{
+        padding: 2rem 9%;
+    }
+    sub{
+        color: gray;
+        font-family: cursive;
+    }
+    .heading{
+        text-align: center ;
+        padding-bottom: 2rem;
+        font-size:4.5rem ;
+        color: var(--black);
+
+    }
+
+    .heading span{
+        position: relative;
+        z-index: 0;
+    }
+
+    .heading span::before{
+        content: '';
+        position: absolute;
+        top: 0;left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: var(--light-yellow);
+        clip-path: polygon(100% 100%, 0 100%, 100% 88%);
+    }
+
+    .btn{
+        display: inline-block;
+        margin-top: 1rem;
+        border-radius: .5rem;
+        background: var(--light-yellow);
+        color: var(--black);
+        font-weight: 500;
+        font-size: 1.7rem;
+        cursor: pointer;
+        padding: .8rem 3rem;
+    }
+
+    .btn:hover{
+        background-color: var(--yellow);
+    }
+
+    .header{
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 999;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 9%;
+    }
+    
+    .header .logo{
+        font-size: 2.5rem;
+        color: var(--black);
+        font-weight: bolder;
+        text-decoration: underline;
+        font-weight: 900;
+    }
+    .header .logo span{
+        color: var(--yellow);
+    }
+    .header .logo img{
+        width: 15%;
+       
+    }
+    .header .navbar a{
+        font-size: 1.7rem;
+        margin: 0 1rem;
+      
+        color: var(--black);   
+    }
+
+    .header .navbar a:hover{
+        color: var(--yellow);
+    }
+    .header .btn{
+        margin-top: 0;
+    }
+    .header #login-btn i{
+       font-size: 2.5rem; 
+       color: var(--light-color);
+       cursor: pointer;
+       display: none;
+    }
+
+    .menu-btn {
+        font-size: 2.5rem;
+        color: var(--light-color) ;
+        cursor: pointer;
+        display: none;
+    }
+
+    .menu-btn img{
+        width: 50px;
+    }
+  
+.header.active{
+    box-shadow: var(--box-shadow);
+    padding: 2rem 9%;
+}
+
+.login-form-container{
+    position: fixed;
+    top: -105%; left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255, .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.login-form-container.active{
+    top: 0;
+    opacity: 1;
+}
+
+.login-form-container form{
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    border: var(--border);
+    text-align: center;
+    width: 40rem;
+}
+
+.login-form-container form .buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-form-container form  .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem 0;
+}
+
+.login-form-container form h3{
+    color: var(--black);
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.login-form-container form .box{
+    margin: .7rem 0;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem;
+    border: var(--border);
+    border-radius: .5rem;
+}
+.login-form-container form p{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.login-form-container form p a{
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+.login-form-container #close-login-form{
+position: absolute;
+top: 1.5rem; right: 2.5rem;
+font-size: 5rem;
+color: var(--black);
+cursor: pointer;
+}
+
+.home{
+    padding-top: 14rem;
+    text-align: center;
+    overflow-x: hidden;
+}
+.home h1{
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.home img{
+    width: 100%;
+    margin: 1rem 0;
+    background-size: cover;
+}
+
+.icons-container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    background: #eee;
+}
+
+.icons-container .icons{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.icons-container .icons i{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    background: #eee;
+    color: var(--black);
+    text-align: center;
+}
+
+.icons-container .icons .content h3{
+color: var(--yellow);
+font-size: 2.5rem;
+}
+
+.icons-container .icons .content p{
+color: var(--light-color);
+font-size: 1.5rem;
+}
+
+.icons-container .icons:hover{
+    background: var(--black);
+}
+
+.icons-container .icons:hover i{
+    background: var(--yellow);
+}
+
+.icons-container .icons:hover .content h3{
+    color: #fff;
+}
+
+
+.icons-container .icons:hover .content p{
+    color: #eee;
+}
+
+.vehicles .vehicles-slider{
+    padding-bottom: 5rem;
+}
+
+.vehicles .vehicles-slider .box{
+    text-align: center;
+   
+}
+
+.vehicles .vehicles-slider .box img{
+    width: 100%;
+   opacity: .5;
+    transform: scale(.8); 
+}
+
+.vehicles .vehicles-slider .box .content{
+ transform: scale(0); 
+ padding-top: 1rem;
+}
+
+.vehicles .vehicles-slider .swiper-slide-active img{
+    opacity: 1;
+    transform: scale(1); 
+}
+.vehicles .vehicles-slider .swiper-slide-active .content{
+    transform: scale(1);
+}
+
+.vehicles .vehicles-slider .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.vehicles .vehicles-slider .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+
+.vehicles .vehicles-slider .box .content .price{
+    font-size: 2.5rem;
+    color: var(--yellow);
+    padding: 1rem 0;
+    font-weight: bolder;
+}
+
+
+.vehicles .vehicles-slider .box .content .price span{
+    font-size: 1.7rem;
+    color: var(--light-color);
+     font-weight: normal;
+}
+
+.vehicles .vehicles-slider .box .content p{
+font-size: 1.6rem;
+padding: 1rem;
+padding-top: 1.5rem;
+border-top: var(--border);
+color: var(--light-color);
+}
+
+.vehicles .vehicles-slider .box .content p span{
+    color: var(--yellow);
+    font-size: .8rem;
+    padding: 0 .5rem;
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--yellow);
+}
+
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.services .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    border-radius:  .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+
+.services .box-container .box i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    background: var(--yellow);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.services .box-container .box h3{
+    color: var(--black);
+    font-size: 2.2rem;
+}
+
+.services .box-container .box p{
+    color: var(--light-color);
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    line-height: 1.8; 
+}
+
+.services .box-container .box:hover{
+    background: var(--black);
+}
+
+
+.services .box-container .box:hover h3{
+    color: #fff;
+}
+
+
+.services .box-container .box:hover p{
+    color: #eee;
+}
+
+.featured .featured-slider{
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+.featured .featured-slider .box{
+    text-align: center;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+}
+
+.featured .featured-slider .box img{
+
+width: 100%;
+padding: 2rem;
+}
+
+
+.featured .featured-slider .box:hover img{
+    transform: scale(.9);
+}
+
+.featured .featured-slider .box h3{
+    font-size: 2.2rem;
+    color: var(--black);
+}
+
+.featured .featured-slider .box .stars{
+ padding: 1rem 0;
+}
+
+
+.featured .featured-slider .box .stars i{
+ font-size: 1.7rem;
+ color: var(--yellow);
+}
+
+.featured .featured-slider .box .price{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.newsletter{
+    padding: 6rem 2rem;
+    text-align: center;
+    background: url(images/news.jfif) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.newsletter h3{
+    color: var(--black);
+    font-size: 3rem;
+}
+
+.newsletter p{
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.newsletter  form{
+    margin: 1rem auto;
+    max-width: 60rem;
+    height: 5rem;
+    display: flex;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    border-radius: 5rem;
+}
+
+.newsletter  form input[type="email"]{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    padding: 0 2rem;
+}
+
+
+.newsletter  form input[type="submit"]{
+    height: 100%;
+    width: 17rem;
+    font-size: 1.7rem;
+    color: var(--black);
+    background: var(--light-yellow);
+    cursor: pointer;
+}
+
+
+.newsletter  form input[type="submit"]:hover{
+    background: var(--yellow);
+}
+
+.reviews .reviews-slider{
+    padding-bottom: 3rem;
+}
+
+
+.reviews .reviews-slider .box{
+    padding: 2rem 1.7rem;
+    margin: 2rem 0;
+    text-align: center;
+    opacity: .4;
+    transform: scale(.9);
+}
+
+.reviews .reviews-slider .swiper-slide-active{
+    opacity: 1;
+    transform: scale(1); 
+    box-shadow: var(--box-shadow);
+    border: var(--border);  
+}
+
+.reviews .reviews-slider .box img{
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.reviews .reviews-slider .box .content p{
+font-size: 1.5rem;
+columns: var(--light-color);
+padding: 1rem 0;
+}
+
+
+.reviews .reviews-slider .box .content h3{
+font-size: 2.2rem;
+columns: var(--black);
+padding-bottom: .5rem;
+}
+
+
+.reviews .reviews-slider .box .content .stars i{
+font-size: 3rem;
+color: var(--yellow);
+}
+
+.contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact .row .map{
+    flex: 1 1 42rem;
+    width: 100%;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+
+.contact .row form{
+    flex: 1 1 42rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.contact .row form h3{
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.contact .row form .box{
+    margin: .7rem 0;
+    width: 100%;
+    border: var(--border);
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    border-radius: .5rem;
+}
+
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+.footer{
+    background: var(--light-yellow);
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3{
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    color: var(--light-color);
+    font-size: 1.4rem;
+    display: block;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color: var(--black);
+}
+
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+    
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: var(--border);
+    padding: 1rem;
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.featured span{
+    font-size: 2rem;
+    color: var(--yellow);
+}
+
+.credit span{
+   
+    font-size: 2rem;
+    font-family: cursive;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+    @media(max-width:991px){
+        html{
+            font-size: 55%;
+        }
+        .header{
+            padding: 2rem;
+        }
+        .header.active{
+            padding: 2rem;
+        }
+        section{
+            padding: 2rem;
+        }
+    }
+    @media(max-width:768px){
+        .menu-btn{
+            display: block;
+        }
+        .menu-btn.x-bx{
+            transform: rotate(180deg);
+        }
+        .header #login-btn i{
+            display: block;
+        }
+        .header #login-btn .btn{
+            display: none;
+        }
+        .header .navbar{
+            position: absolute;
+            top: 99%; left: 0; right: 0;
+            background: #fff;
+            border-top: var(--border);
+           
+        }
+
+        .header .navbar.active{
+        display: block;
+        }
+        .header .navbar a{
+         
+            margin: 2rem;
+            font-size: 2rem;
+            display: none;
+        }
+    }
+    @media(max-width:450px){
+        html{
+            font-size: 50%;
+        }
+        .header .logo{
+            font-size: 2.5rem;
+        }
+        .heading{
+            font-size: 3rem;
+        }
+        .contact .row img{
+            width: 100%;
+        }
+
+    }
+</style>
+<html>
+<body>
+    
+<header class="header">
+
+<div class="menu-btn"> <img src="images/logo-removebg-preview.png" alt=""></div>
+
+    <a href="#" class="logo"> The Instant <span>Drive </span><sub>car hire</sub></a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#vehicles">vehicles</a>
+        <a href="#services">services</a>
+        <a href="#featured">featured</a>
+        <a href="#reviews">reviews</a>
+        <a href="#contact">contact</a>
+    </nav>
+
+    <div id="login-btn">
+        <button class="btn">login</button>
+        <i class='bx bxs-user'></i>
+    </div>
+</header>
+
+
+<div class="login-form-container">
+
+<span class= "bx bx-x"  id="close-login-form"></span>
+
+    <form action="">
+        <h3>User login</h3>
+        <input type="email" placeholder="email" class="box">
+        <input type="password" placeholder="password" class="box">
+        <p>forgot password<a href="#">click here</a></p>
+        <input type="submit" value="login now" class="btn">
+        <p>or login with</p>
+        <div class="buttons">
+            <a href="#" class="btn">facebook</a>
+            <a href="#" class="btn">google</a>
+        </div>
+        <p>don't have an account <a href="#">create one</a></p>
+    </form>
+</div>
+
+
+<section class="home" id="home">
+
+<h1 class="home-parallax" data-speed="-2">find your car</h1>
+<img class="home-parallax" data-speed="5" src="images/f.home-removebg-preview.png" alt="">
+<a href="#" class="btn home-parallax" data-speed="7">explore cars</a>
+</section>
+
+
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class='bx bxs-home'></i>
+        <div class="content">
+            <h3>1</h3>
+            <p>branch</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class='bx bxs-car-garage'></i>
+        <div class="content">
+            <h3>20+</h3>
+            <p>cars</p>
+        </div>
+    </div>
+
+
+    <div class="icons">
+        <i class='bx bxs-car'></i>
+        <div class="content">
+            <h3>5+</h3>
+            <p>drivers</p>
+        </div>
+    </div>
+
+    
+    <div class="icons">
+        <i class='bx bxs-happy'></i>
+        <div class="content">
+            <h3>100+</h3>
+            <p>happy-clients</p>
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+<section class="vehicles" id="vehicles">
+
+    <h1 class="heading">popular<span> vehicles</span></h1>
+
+    <div class="swiper vehicles-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/f.home-removebg-preview.png" alt="">
+                <div class="content">
+                    <h3>toyota fortuner</h3>
+                    <div class="price"><span>price: </span>$150</div>
+                    <p>
+                        new
+                        <span class='bx bxs-circle'></span> 2021
+                        <span class='bx bxs-circle'></span> manual
+                        <span class='bx bxs-circle'></span> diesel
+                        <span class='bx bxs-circle'></span> 240km/h
+                    </p>
+                    <a href="#" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/Truck3.jpg" alt="">
+                <div class="content">
+                    <h3>toyota hilux</h3>
+                    <div class="price"><span>price: </span>$150</div>
+                    <p>
+                        new
+                        <span class='bx bxs-circle'></span> 2021
+                        <span class='bx bxs-circle'></span> manual
+                        <span class='bx bxs-circle'></span> diesel
+                        <span class='bx bxs-circle'></span> 240km/h
+                    </p>
+                    <a href="#" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/f.home-removebg-preview.png" alt="">
+                <div class="content">
+                    <h3>Toyota</h3>
+                    <div class="price"><span>price: </span>$150</div>
+                    <p>
+                        new
+                        <span class='bx bxs-circle'></span> 2021
+                        <span class='bx bxs-circle'></span> manual
+                        <span class='bx bxs-circle'></span> diesel
+                        <span class='bx bxs-circle'></span> 280km/h
+                    </p>
+                    <a href="#" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/truck-removebg-preview.png" alt="">
+                <div class="content">
+                    <h3>Toyota</h3>
+                    <div class="price"><span>price: </span>$150</div>
+                    <p>
+                        new
+                        <span class='bx bxs-circle'></span> 2021
+                        <span class='bx bxs-circle'></span> manual
+                        <span class='bx bxs-circle'></span> diesel
+                        <span class='bx bxs-circle'></span> 240km/h
+                    </p>
+                    <a href="#" class="btn">check out</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv1.jpg" alt="">
+                <div class="content">
+                    <h3>x-trail</h3>
+                    <div class="price"><span>price: </span>$50</div>
+                    <p>
+                        new
+                        <span class='bx bxs-circle'></span> 2021
+                        <span class='bx bxs-circle'></span> manual
+                        <span class='bx bxs-circle'></span> diesel
+                        <span class='bx bxs-circle'></span> 240km/h
+                    </p>
+                    <a href="#" class="btn">check out</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+</section>
+
+
+
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class='bx bxs-car'></i>
+            <h3>car rental</h3>
+            <p>We rent out brand new cars</p>
+                <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class='bx bxs-car-mechanic'></i>
+            <h3>parts repair</h3>
+            <p>get your car parts repaired by our expert mechanics</p>
+                <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class='bx bxs-car-wash'></i>
+            <h3>car wash</h3>
+            <p>We also have a car wash</p>
+                <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class='bx bxs-car-garage'></i>
+            <h3>garage</h3>
+            <p>24/<span>7</span> functional garage</p>
+                <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class='bx bxs-car'></i>
+            <h3>car sale</h3>
+            <p>We also sale brand new cars</p>
+                <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <i class='bx bxs-gas-pump'></i>
+            <h3>oil change</h3>
+            <p>Top notch service for all vehicles </p>
+                <a href="#" class="btn">read more</a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>economic</span> cars</h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/allion.jpg" alt="">
+                <h3>allion</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>24hr</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/raaum.jpg" alt="">
+                <h3>raum</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$40 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/t-ranx.jpg" alt="">
+                <h3>run-x</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$40 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/honda fit hybrid Gp5.webp" alt="">
+                <h3>honda fit Gp5</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/hundai.jpg" alt="">
+                <h3>hundai</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/Honda fit ge.jpg" alt="">
+                <h3>honda fit ge</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$40 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/Honda fit Rs.jpg" alt="">
+                <h3>honda fit rs</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$40 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+    
+    
+
+
+    <h1 class="heading"> <span>standard</span> cars</h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/sedan.jpg" alt="">
+                <h3>honda</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/sedan1.jpg" alt="">
+                <h3>honda</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/sedan2.jpg" alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>/ 24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/sedan3.jpg" alt="">
+                <h3>run-x</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$40 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/hundai.jpg" alt="">
+                <h3>hundai</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$45 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+    
+    
+    
+    
+    
+    <h1 class="heading"> <span>truck</span> cars</h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/truck-removebg-preview.png" alt="">
+                <h3>Toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$90 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/Truck1.jpg" alt="">
+                <h3>Toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$90 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/truck2.jpg" alt="">
+                <h3>mazda</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$90 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/Truck3.jpg " alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$90 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/Truck4.jpg" alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$90 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+
+
+
+
+    <h1 class="heading"> <span>mini</span> vans</h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/mini.jpg" alt="">
+                <h3>honda</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/mini1.jpg" alt="">
+                <h3>Combi</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/mini2.jpg" alt="">
+                <h3>combi</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+
+            <div class="swiper-slide box">
+                <img src="images/mini.jpg" alt="">
+                <h3>Van</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/mini1.jpg" alt="">
+                <h3>Combi</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/mini2.jpg" alt="">
+                <h3>combi</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+
+
+    
+    
+    
+
+
+
+    <h1 class="heading"> <span>standard</span> suv's</h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/suv1.jpg" alt="">
+                <h3>X-trail</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$50 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv2.jpg" alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$100</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv3.jpg" alt="">
+                <h3>x-trail</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$60</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv4.jpg" alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$100</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv5.jpg" alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$100</div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+    
+    
+    
+    <h1 class="heading"> <span>luxurious</span> cars</h1>
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/truck2.jpg" alt="">
+                <h3>mazda</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$150 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv4.jpg" alt="">
+                <h3>toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$150 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/truck-removebg-preview.png" alt="">
+                <h3>Toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$150 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/suv3.jpg" alt="">
+                <h3>x-trail</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$50 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+            <div class="swiper-slide box">
+                <img src="images/truck-removebg-preview.png" alt="">
+                <h3>Toyota</h3>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+
+
+                </div>
+                <div class="price">$150 <span>/24hrs</span></div>
+                <a href="#" class="btn">check out</a>
+            </div>
+           
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+
+</section>
+
+
+<section class="newsletter">
+
+  <h3>subscribe for latest updates</h3>
+
+  <p>This section is where you get all the updates for new cars in stock</p>
+
+    <form action="">
+        <input type="email" placeholder="enter your email "  name="" id="" >
+        <input type="submit" class="subscribe" name="" id="" >
+    </form>
+
+
+
+</section>
+
+
+<section class="reviews" id="reviews">
+
+    <h1 class="heading"> Our <span>Team</span></h1>
+
+    <div class="swiper reviews-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/tendayi.jpg" alt="">
+                <div class="content">
+                    <p>CEO</p>
+                        <h3>Tendai Gwashu</h3>
+                        <div class="stars">
+                            <a href=""><i class='bx bxl-facebook-circle'></i></a> 
+                            <a href=""> <i class='bx bxl-whatsapp'></i></a>
+                            <a href=""><i class='bx bx-envelope'></i> </a>  
+        
+        
+                        </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/lovemore.jpg" alt="">
+                <div class="content">
+                    <p>Partner</p>
+                        <h3>Lovemore Taruvinga</h3>
+                        <div class="stars">
+                            <a href=""><i class='bx bxl-facebook-circle'></i></a> 
+                            <a href=""> <i class='bx bxl-whatsapp'></i></a>
+                            <a href=""><i class='bx bx-envelope'></i> </a>  
+                        </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/precious.jpg" alt="">
+                <div class="content">
+                    <p>Partner</p>
+                        <h3>Precious Gwashu</h3>
+                        <div class="stars">
+                            <a href=""><i class='bx bxl-facebook-circle'></i></a> 
+                            <a href=""> <i class='bx bxl-whatsapp'></i></a>
+                            <a href=""><i class='bx bx-envelope'></i> </a>  
+        
+                        </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/tendayi.jpg" alt="">
+                <div class="content">
+                    <p>CEO</p>
+                        <h3>Tendai Gwashu</h3>
+                        <div class="stars">
+                            <a href=""><i class='bx bxl-facebook-circle'></i></a> 
+                            <a href=""> <i class='bx bxl-whatsapp'></i></a>
+                            <a href=""><i class='bx bx-envelope'></i> </a>  
+                        
+                        </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/tafadzwa.jpg" alt="">
+                <div class="content">
+                    <p>Partner</p>
+                        <h3>Tafadzwa Gwashu</h3>
+                        <div class="stars">
+                          <a href=""><i class='bx bxl-facebook-circle'></i></a> 
+                          <a href=""> <i class='bx bxl-whatsapp'></i></a>
+                          <a href=""><i class='bx bx-envelope'></i> </a>    
+                        </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+</section>
+
+<section class="contact" id="contact">
+<h1 class="heading"> <span>contact</span> us</h1>
+
+<div class="row">
+   <img src="images/logo-removebg-preview.png" alt="">
+
+    <form action="" onsubmit="sendEmail(); reset(); return false;">
+        <h3>get in touch</h3>
+        <input type="text" placeholder="name" class="box">
+        <input type="email" placeholder="email" class="box">
+        <input type="number" placeholder="number" class="box">
+        <textarea placeholder="message" class="box" cols="30" rows="10"></textarea>
+        <input type="submit" value="send message" class="btn">
+    </form>
+</div>
+
+</section>
+
+
+<section class="footer">
+
+    <div class="box-container">
+        <div class="box">
+            <h3>
+                our branches
+            </h3>
+            <a href="#"><i class='bx bx-map'></i>Harare</a>
+           
+        </div>
+
+        <div class="box">
+            <h3>
+                quick links
+            </h3>
+            <a href="#home"><i class='bx bx-right-arrow-alt'></i> home</a>
+        
+            <a href="#vehicles"><i class='bx bx-right-arrow-alt'></i> vehicles</a>
+            <a href="#services"><i class='bx bx-right-arrow-alt'></i> services</a>
+            <a href="#featured"><i class='bx bx-right-arrow-alt'></i>cars</a>
+            
+            <a href="#reviews"><i class='bx bx-right-arrow-alt'></i> reviews</a>
+            <a href="#newsletter"><i class='bx bx-right-arrow-alt'></i> newsletter</a>
+            <a href="#contact"><i class='bx bx-right-arrow-alt'></i> contact</a>
+        </div>
+
+        <div class="box">
+            <h3>contact details</h3>
+            <a href="#"><i class='bx bxs-phone-call'></i> +263 77 521 7666</a>
+            <a href="#"><i class='bx bxl-facebook'></i> The Instant Drive Car hire</a>
+            <a href="#"><i class='bx bxs-envelope'></i> theinstantdrivecarhire@gmail.com</a> 
+        </div>
+    </div>
+
+    <div class="credit">Copyright © 2023 designed by <span> Code-X </span> All Rights Reserved.</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+   let menu = document.querySelector('.menu-btn');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+    menu.classList.toggle('bx bx-x');
+    navbar.classList.toggle('active');
+}
+document.querySelector('#login-btn').onclick = () =>{
+document.querySelector('.login-form-container').classList.toggle('active');    
+}
+
+document.querySelector('#close-login-form').onclick = () =>{
+document.querySelector('.login-form-container').classList.remove('active');    
+}
+
+
+window.onscroll = () => {
+
+    if(window.scrollY > 0){
+        document.querySelector('.header').classList.add('active');
+    }else{
+        document.querySelector('.header').classList.remove('active');
+    }
+    }
+    menu.classList.remove('bx bx-x');
+    navbar.classList.remove('active');
+
+
+
+    window.onload = () => {
+
+if(window.scrollY > 0){
+    document.querySelector('.header').classList.add('active');
+}else{
+    document.querySelector('.header').classList.remove('active');
+}
+};
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".vehicles-slider", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop:true,
+      grabCursor:true,
+      centeredSlides:true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+      },
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+       
+        },
+        768: {
+          slidesPerView: 2,
+          
+        },
+        991: {
+          slidesPerView: 3,
+    
+        },
+      },
+    });
+
+
+
+
+    var swiper = new Swiper(".featured-slider", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop:true,
+      grabCursor:true,
+      centeredSlides:true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+      },
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+       
+        },
+        768: {
+          slidesPerView: 2,
+          
+        },
+        991: {
+          slidesPerView: 3,
+    
+        },
+      },
+    });
+
+
+
+    var swiper = new Swiper(".reviews-slider", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop:true,
+      grabCursor:true,
+      centeredSlides:true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+      },
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+       
+        },
+        768: {
+          slidesPerView: 2,
+          
+        },
+        991: {
+          slidesPerView: 3,
+    
+        },
+      },
+    });
+
+
+
+
+
+
+
+
+</script>
+
+<script>"https://smtpjs.com/v3/smtp.js"</script>
+<script>
+
+    
+function sendEmail(){
+        Email.send({
+    Host : "smtp.gmail.com",
+    Username : "kutapiratapex@gmail.com",
+    Password : "Jesusisl0rd",
+    To : 'kutapiratapex@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Contact",
+    Body : "Body"
+        }).then(
+            message => alert(message)
+        );
+    }
+</script>
+
+
+
+
+</body>
+</html>
